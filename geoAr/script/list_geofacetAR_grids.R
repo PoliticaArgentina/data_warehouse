@@ -1,4 +1,4 @@
-#####  DISEnO DE GRILLAS COMO SI FUERAN MAPAS
+#####  DISEÑO DE GRILLAS COMO SI FUERAN MAPAS
 #####  DE ARGENTINA Y SUS PROVINCIAS
 
 #####  1  Creamos un data.frame por cada grilla
@@ -6,10 +6,9 @@
 #####  3  Guardamos la lista como RData 
 
 
-library(tidyverse)
-library(purrr)
-library(geofaceteAR)
-library(geofaceteAR)
+library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.0
+library(purrr) # Functional Programming Tools, CRAN v0.3.4
+library(geofaceteAR) # Acomodar las Grillas como Mapas, [github::electorArg/geofaceteAR] v0.0.1
 
 
 
@@ -767,3 +766,4 @@ write_csv(provCode, "geo/provCode.csv")
 #Guardo lista de grillas en destino /geo
 write_rds(x = data, path = "geo/grillas_geofacet.rds")
   
+

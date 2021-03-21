@@ -1,6 +1,10 @@
-library(tidyverse)
-library(sf)
-library(ggplot2)
+#### GET AND SIMPLIFY ARG POLYGONS
+#### Juan Pablo Ruiz Nicolini
+
+
+library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.0
+library(sf) # Simple Features for R, CRAN v0.9-7
+library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics, CRAN v3.3.3
 
 
 #### MAP ARGENTINA w/ PROVS
@@ -27,7 +31,7 @@ mapa_arg <- sf::read_sf(your_SHP_file) %>%
 mapa_arg %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>% 
-  st_write("geo/provincias.geojson")
+  st_write("../data_warehouse/geoAr/data_raw/provincias.geojson")
 
 
 
@@ -36,7 +40,7 @@ mapa_arg %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>% 
   st_simplify(dTolerance = .005) %>% 
-  st_write("geo/provincias_simplified.geojson")
+  st_write("../data_warehouse/geoAr/data/provincias_simplified.geojson")
 
 
 
@@ -65,13 +69,36 @@ mapa_arg_deptos <- sf::read_sf(your_SHP_file)  %>%
 mapa_arg_deptos %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>%
-  st_write("geo/localidades.geojson")
+  st_write("../data_warehouse/geoAr/data_raw/localidades.geojson")
 
 
 mapa_arg_deptos %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>% 
-  st_simplify(dTolerance = .005) %>% 
-  st_write("geo/localidades_simplified.geojson")
+  st_simplify(dTolerance = .0004) %>% 
+  st_write("../data_warehouse/geoAr/data/localidades_simplified.geojson")
 
 
+## CHECK SHAPE
+
+
+
+library(patchwork)
+
+simple <- sf::read_sf("geoAr/data/localidades_simplified.geojson") %>%
+  dplyr::filter(codprov_censo == "02") %>% 
+  ggplot2::ggplot()+
+  ggplot2::geom_sf()
+
+
+
+raw <-  sf::read_sf("geoAr/data_raw/localidades.geojson")  %>%
+  dplyr::filter(codprov_censo == "02") %>% 
+  ggplot2::ggplot()+
+  ggplot2::geom_sf()
+
+
+
+
+
+simple + raw
