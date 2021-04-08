@@ -64,6 +64,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add --all
           git commit -am "add ICG data"
+          git pull
           git push 
       - name: Session info
         run: |
