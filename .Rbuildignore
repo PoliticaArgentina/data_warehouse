@@ -1,0 +1,8 @@
+^opinAr/data_raw/icg\.dta$
+^electorAr/
+^discursAr/
+^geoAr/
+^legislAr/
+^hex
+^LICENSE\.md$
+^data_warehouse\.Rproj$
