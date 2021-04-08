@@ -6,3 +6,4 @@
 ^hex
 ^LICENSE\.md$
 ^data_warehouse\.Rproj$
+^\.Rproj\.user$

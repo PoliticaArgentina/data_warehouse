@@ -54,7 +54,7 @@ jobs:
           
       - name: Generate data
         run: |
-          source("source_R/icg.R")
+          source(".github/source_R/icg.R")
         shell: Rscript {0} 
         
       - name: Commit files
