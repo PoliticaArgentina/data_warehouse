@@ -47,7 +47,7 @@ waves <- df %>%
     } else {
     
     haven::write_dta(data = df, path = "opinAr/data_raw/icg.dta") 
-    base::save(waves, file = "opinAr/data_raw/icg_waves.txt") 
+    readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
     
     }
 
