@@ -1,8 +1,8 @@
 on:
   schedule:
-    #- cron: "0 12  10 *  *" # At 12:00 PM, on day 10 of the month  https://crontab.cronhub.io/
-    - cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
-    #- cron: "*/30 17 10,20 * *" # Every 30 minutes, between 05:00 PM and 05:59 PM, on day 10 and 20 of the month
+    # https://crontab.cronhub.io/
+    #- cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
+    - cron: "*/60 10,11 15,25 * *" # Every 60 minutes, at 10:00 AM and 11:00 AM, on day 15 and 25 of the month
 jobs:
   generate-data:
     runs-on: ${{ matrix.config.os }}
