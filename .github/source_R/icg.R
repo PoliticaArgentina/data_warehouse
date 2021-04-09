@@ -25,6 +25,15 @@ df <- base::suppressWarnings(base::try(default <- rvest::read_html(url) %>% # SC
                                          janitor::clean_names(),
                                        silent = TRUE))
 
+waves <- df %>% 
+  dplyr::mutate(fecha = base::as.Date(base::paste0(ano,"-",mes,"-01"))) %>% 
+  dplyr::select(ola, fecha) %>% 
+  dplyr::group_by(ola) %>% 
+  dplyr::arrange(fecha) %>% 
+  dplyr::slice(2) %>% 
+  dplyr::ungroup() %>% 
+  dplyr::mutate(mes = lubridate::month(fecha), ano = lubridate::year(fecha)) %>% 
+  dplyr::select(-fecha)
 
 # Fail safely when online source is not available
 
@@ -36,7 +45,8 @@ df <- base::suppressWarnings(base::try(default <- rvest::read_html(url) %>% # SC
     } else {
     
     haven::write_dta(data = df, path = "opinAr/data_raw/icg.dta") 
-  
+    readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
+    
     }
 
 

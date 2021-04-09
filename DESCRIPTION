@@ -18,4 +18,6 @@ Imports:
     haven,
     janitor,
     magrittr,
-    rvest
+    rvest, 
+    readr, 
+    dplyr
