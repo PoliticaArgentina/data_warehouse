@@ -6,6 +6,8 @@ library(magrittr) # A Forward-Pipe Operator for R, CRAN v2.0.1
 library(rvest) # Easily Harvest (Scrape) Web Pages, CRAN v1.0.0
 library(haven) # Import and Export 'SPSS', 'Stata' and 'SAS' Files, CRAN v2.3.1
 library(janitor) # Simple Tools for Examining and Cleaning Dirty Data, CRAN v2.1.0
+library(dplyr) # A Grammar of Data Manipulation, CRAN v1.0.5
+library(readr) # Read Rectangular Text Data, CRAN v1.4.0
 
 
 # DATA SOURCE URL AND PATH
@@ -45,12 +47,13 @@ waves <- df %>%
     } else {
     
     haven::write_dta(data = df, path = "opinAr/data_raw/icg.dta") 
-    readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
+    base::save(waves, file = "opinAr/data_raw/icg_waves.txt") 
     
     }
 
 
 ####
+
 
 
 
