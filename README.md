@@ -10,8 +10,9 @@
 * Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en  `{geofaceteAR}`, cuya idea presentamos en la primera edición de LatinR ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)). 
 
 
->LatinR: Geofaceting Argentina
-> [Abstract](https://github.com/TuQmano/geofacet_ARG/blob/master/.LatinR/Geofaceting_Argentina_RuizNicolini.pdf) | 📊 [Slides](https://www.researchgate.net/publication/327382101_Geofaceting_Argentina_LatinR_2018) | 📦 [{geofaceteAR}]((https://github.com/electorArg/geofaceteAR)) | ⌨️ [blogpost](https://www.tuqmano.com/2020/05/22/empaquetar/).
+> **LatinR: Geofaceting Argentina**
+
+> [Abstract](https://github.com/TuQmano/geofacet_ARG/blob/master/.LatinR/Geofaceting_Argentina_RuizNicolini.pdf) | 📊 [Slides](https://www.researchgate.net/publication/327382101_Geofaceting_Argentina_LatinR_2018) | 📦 [{geofaceteAR}](https://github.com/electorArg/geofaceteAR) | ⌨️ [blogpost](https://www.tuqmano.com/2020/05/22/empaquetar/).
 
 
 ---
