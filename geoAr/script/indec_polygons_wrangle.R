@@ -5,7 +5,7 @@
 library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.0
 library(sf) # Simple Features for R, CRAN v0.9-7
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics, CRAN v3.3.3
-
+library(rmapshaper) # Client for 'mapshaper' for 'Geospatial' Operations, CRAN v0.4.4
 
 #### MAP ARGENTINA w/ PROVS
 
@@ -36,10 +36,10 @@ mapa_arg %>%
 
 
 # SIMPLIFY PROVS
-mapa_arg %>%
+mapa_arg %>% 
+  rmapshaper::ms_simplify() %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>% 
-  st_simplify(dTolerance = .005) %>% 
   st_write("../data_warehouse/geoAr/data/provincias_simplified.geojson")
 
 
@@ -72,10 +72,10 @@ mapa_arg_deptos %>%
   st_write("../data_warehouse/geoAr/data_raw/localidades.geojson")
 
 
-mapa_arg_deptos %>%
+mapa_arg_deptos %>% 
+  rmapshaper::ms_simplify() %>%
   st_crop(xmin = -78.844299, ymin = -56.918980,
           xmax = -53.531800, ymax = -20.341163) %>% 
-  st_simplify(dTolerance = .0004) %>% 
   st_write("../data_warehouse/geoAr/data/localidades_simplified.geojson")
 
 
@@ -83,7 +83,7 @@ mapa_arg_deptos %>%
 
 
 
-library(patchwork)
+library(patchwork) # The Composer of Plots, CRAN v1.1.1
 
 simple <- sf::read_sf("geoAr/data/localidades_simplified.geojson") %>%
   dplyr::filter(codprov_censo == "02") %>% 
@@ -102,3 +102,14 @@ raw <-  sf::read_sf("geoAr/data_raw/localidades.geojson")  %>%
 
 
 simple + raw
+
+
+### CENSUS TRACT
+# Polygons compiled in one geojson from https://sitioanterior.indec.gob.ar/codgeo.asp
+
+read_sf("geoAr/data_raw/radios_censales.geojson") %>% 
+  rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
+  st_write("geoAr/data/radios_simplified.geojson")
+
+
+
