@@ -7,7 +7,7 @@ library(sf) # Simple Features for R, CRAN v0.9-7
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics, CRAN v3.3.3
 library(rmapshaper) # Client for 'mapshaper' for 'Geospatial' Operations, CRAN v0.4.4
 
-#### MAP ARGENTINA w/ PROVS
+#### MAP ARGENTINA w/ PROVS ####
 
 #create a couple temp files
 
@@ -44,7 +44,7 @@ mapa_arg %>%
 
 
 
-#### MAP ARGENTINA w/DEPTOS
+#### MAP ARGENTINA w/DEPTOS ####
 
 
 temp <- tempfile()
@@ -99,10 +99,24 @@ raw <-  sf::read_sf("geoAr/data_raw/localidades.geojson")  %>%
 
 simple + raw
 
-### CENSUS TRACT
+
+### ARGENTINA CENSUS TRACT####
 # Polygons compiled in one geojson from https://sitioanterior.indec.gob.ar/codgeo.asp
 
-read_sf("geoAr/data_raw/radios_censales.geojson") %>% 
+
+temp <- tempfile()
+
+temp2 <- tempfile()
+
+#download the zip folder from the internet save to 'temp' 
+download.file("https://github.com/PoliticaArgentina/data_warehouse/raw/master/geoAr/data_raw/raw_radios_censales.zip",temp)
+#unzip the contents in 'temp' and save unzipped content in 'temp2'
+unzip(zipfile = temp, exdir = temp2)
+
+your_geojson_file<-list.files(temp2, pattern = ".geo",full.names=TRUE)
+
+
+read_sf(your_SHP_file)%>% 
   rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
   st_write("geoAr/data/radios_simplified.geojson")
 
