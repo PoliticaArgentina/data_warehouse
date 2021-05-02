@@ -97,12 +97,7 @@ raw <-  sf::read_sf("geoAr/data_raw/localidades.geojson")  %>%
   ggplot2::ggplot()+
   ggplot2::geom_sf()
 
-
-
-
-
 simple + raw
-
 
 ### CENSUS TRACT
 # Polygons compiled in one geojson from https://sitioanterior.indec.gob.ar/codgeo.asp
