@@ -1,9 +1,9 @@
 # LIBRERIAS PARA SCRAPEAR casarosada.gob.ar
-library(rvest)
-library(xml2)
-library(tidyverse)
-library(glue)
-library(lubridate)
+library(rvest) # Easily Harvest (Scrape) Web Pages, CRAN v1.0.0
+library(xml2) # Parse XML, CRAN v1.3.2
+library(tidyverse) # Easily Install and Load the 'Tidyverse', CRAN v1.3.0
+library(glue) # Interpreted String Literals, CRAN v1.4.2
+library(lubridate) # Make Dealing with Dates a Little Easier, CRAN v1.7.10
 
 
 # URL casarosada.gob.ar
@@ -74,13 +74,28 @@ speech_to_extract <- extract_dates %>%
           select(discurso) %>% 
           flatten_df() %>%
           bind_cols(speech_to_extract) %>% 
-          group_by(link, date, titulo) %>% 
-          nest()
+          group_by(link, date, titulo) 
         
         # GUARDO NUEVOS DISCURSOS
 
-
-                  
+        save_discurso <- discurso %>% 
+          group_by(date) %>% 
+          mutate(n = 1:n(), 
+                 id = glue::glue("{date}-{n}"), 
+                 fecha = id) %>%
+          group_by(id) %>% 
+          select(id, fecha ,  discurso = titulo, texto) %>% 
+          nest()
+      
+        
+        # REVISAR ACA !!!#####    
+        save_discurso$data[[]]
+        
+        
+      save_discurso%>% 
+        map2(.x = glue::glue("{id}.csv"), .y = data[[.x]], .f = write_csv)
+        
+        
  } else {
      
    message('No hay nuevos discursos para descrgar')}
