@@ -3,7 +3,7 @@
 
 ---
 
-## {geoAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="50" align="right" /></a>
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="right" /></a> {geoAr} 
 
 
 * Las geometrías acá dosponibilizadas fueron descargados desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del _Censo Nacional de Población, Hogares y Viviendas 2010_. 
@@ -18,7 +18,7 @@
 
 ---
 
-## {opinAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.png?raw=true" width="50" align="right" /></a>
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="right" /></a> {opinAr} 
 
 Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella realiza para su _Índice de Confianza en el Gobierno_ (ICG). 
 
@@ -45,7 +45,7 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 
 * para consultas sobre el índice, dirigirse a los profesores Carlos Gervasoni (cgervasoni@utdt.edu) o Javier Zelaznik (jzelaznik@utdt.edu)
 
-## {legislAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legisAr.png?raw=true" width="50" align="right" /></a>
+##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="right" /></a> {legislAr}
 
 Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
 
@@ -53,7 +53,7 @@ Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andy
 
 # En proceso
 
-## {discursAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="50" align="right" /></a>
+##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="100" align="right" /></a> {discursAr}
 
 ### Facilitar el acceso a datos de discursos presidenciales: 
 
@@ -69,7 +69,7 @@ Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andy
 
 ---
 
-## {electorAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="50" align="right" /></a>
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="100" align="right" /></a> {electorAr} 
 
 * Datos electorales de Argentina: 
 
