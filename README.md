@@ -19,7 +19,7 @@ El paquete incluye datos GIS con polígonos para ditintos niveles de unidades ad
 
 ---
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left" /></a> [{📦 opinAr}](https://github.com/PoliticaArgentina/opinAr)
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left" /></a> [📦 {opinAr}](https://github.com/PoliticaArgentina/opinAr)
 
 Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella realiza para su _Índice de Confianza en el Gobierno_ (ICG). 
 
@@ -49,7 +49,7 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 ---
 
 
-##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left" /></a> [{📦 legislAr}](https://github.com/PoliticaArgentina/legislAr)
+##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left" /></a> [📦 {legislAr}](https://github.com/PoliticaArgentina/legislAr)
 
 Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
 
