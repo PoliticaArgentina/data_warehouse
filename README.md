@@ -3,10 +3,11 @@
 
 ---
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left" /></a> {geoAr} 
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left" /></a> [📦 {geoAr}](https://github.com/PoliticaArgentina/geoAr) 
 
+El paquete incluye datos GIS con polígonos para ditintos niveles de unidades administrativas. Se incluyen versiones _raw_ (más detalladas y pesadas) y versiones simplificadas. Se [documentó](https://github.com/PoliticaArgentina/data_warehouse/tree/master/geoAr/script) el proceso de simplificación. 
 
-* Las geometrías acá dosponibilizadas fueron descargados desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del _Censo Nacional de Población, Hogares y Viviendas 2010_. 
+* Las geometrías de niveles de provincias, departamentos y radios censales fueron descargadas desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del _Censo Nacional de Población, Hogares y Viviendas 2010_. 
 
 * Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en  `{geofaceteAR}`, cuya idea presentamos en la primera edición de LatinR ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)). 
 
@@ -18,7 +19,7 @@
 
 ---
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left" /></a> {opinAr} 
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left" /></a> [{📦 opinAr}](https://github.com/PoliticaArgentina/opinAr)
 
 Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella realiza para su _Índice de Confianza en el Gobierno_ (ICG). 
 
@@ -48,7 +49,7 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 ---
 
 
-##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left" /></a> {legislAr}
+##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left" /></a> [{📦 legislAr}](https://github.com/PoliticaArgentina/legislAr)
 
 Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
 
