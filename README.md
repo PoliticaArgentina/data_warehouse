@@ -3,9 +3,10 @@
 
 ---
 
-## {geoAr}
+## {geoAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="50" align="right" /></a>
 
-* Los geometrías acá dosponibilizadas fueron descargados desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del _Censo Nacional de Población, Hogares y Viviendas 2010_. 
+
+* Las geometrías acá dosponibilizadas fueron descargados desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del _Censo Nacional de Población, Hogares y Viviendas 2010_. 
 
 * Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en  `{geofaceteAR}`, cuya idea presentamos en la primera edición de LatinR ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)). 
 
@@ -17,7 +18,7 @@
 
 ---
 
-## {opinAr}
+## {opinAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.png?raw=true" width="50" align="right" /></a>
 
 Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella realiza para su _Índice de Confianza en el Gobierno_ (ICG). 
 
@@ -38,16 +39,21 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 * El índice se presenta en una escala que varía entre un mínimo de 0 y un máximo de 5.
 
 
-**Para mayor información acceder al sitio <https://www.utdt.edu/icg>**
+**Para mayor información:**
 
-**Para consultas sobre el índice, dirigirse a los profesores Carlos Gervasoni (cgervasoni@utdt.edu) o Javier Zelaznik (jzelaznik@utdt.edu)**
+* acceder al sitio <https://www.utdt.edu/icg>
 
+* para consultas sobre el índice, dirigirse a los profesores Carlos Gervasoni (cgervasoni@utdt.edu) o Javier Zelaznik (jzelaznik@utdt.edu)
 
+## {legislAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legisAr.png?raw=true" width="50" align="right" /></a>
 
+Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
 
 ---
 
-## {discursAr}
+# En proceso
+
+## {discursAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="50" align="right" /></a>
 
 ### Facilitar el acceso a datos de discursos presidenciales: 
 
@@ -61,12 +67,9 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 
   - Los de Mauricio Macri y Alberto Fernández descargados desde el sitio web de [casarosda.gob.ar](https://www.casarosada.gob.ar/informacion/discursos) basados en  [código](https://github.com/DiegoKoz/discursos_presidenciales/blob/master/get_data.R) de Diego Kozlowski. 
 
-
-
-
 ---
 
-## {electorAr}
+## {electorAr} <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="50" align="right" /></a>
 
 * Datos electorales de Argentina: 
 
