@@ -70,6 +70,8 @@ Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andy
   - Algunos discursos de Raul Alfonsín fueron recuperados del sitio [alfonsin.org](https://www.alfonsin.org/discursos/). 
 
   - Los de Nestor Kirchner de [cfkargentina.com](https://www.cfkargentina.com/category/nestor/discursos-nestor-2/discursos-2003-2007/). 
+  
+  - Los de Cristina Fernández de Kirchner del repositorio de  [Martín Gaitán](https://github.com/mgaitan/discursos_cfk).
 
   - Los de Mauricio Macri y Alberto Fernández descargados desde el sitio web de [casarosda.gob.ar](https://www.casarosada.gob.ar/informacion/discursos) basados en  [código](https://github.com/DiegoKoz/discursos_presidenciales/blob/master/get_data.R) de Diego Kozlowski. 
 
