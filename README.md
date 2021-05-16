@@ -1,4 +1,4 @@
-# Repositorio de Datos de Política Argentina <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/polAr10-10-10.png?raw=true" width="200" align="left" /></a>
+# Repositorio de Datos de Política Argentina <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/polAr10-10-10.png?raw=true" width="200" align="right" /></a>
 
 
 ---
@@ -45,6 +45,9 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 
 * para consultas sobre el índice, dirigirse a los profesores Carlos Gervasoni (cgervasoni@utdt.edu) o Javier Zelaznik (jzelaznik@utdt.edu)
 
+---
+
+
 ##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left" /></a> {legislAr}
 
 Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
@@ -52,6 +55,8 @@ Datos compartidos por Andy Tow en su proyecto [_La Década Votada_](https://andy
 ---
 
 # En proceso
+
+---
 
 ##  <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="100" align="left" /></a> {discursAr}
 
