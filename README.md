@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left"/></a> [:package: {geoAr}](https://github.com/PoliticaArgentina/geoAr)
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left"/></a> [:package: {geoAr}](https://github.com/PoliticaArgentina/geoAr) - Datos *geo* Argentina:
 
 El paquete incluye datos GIS con polígonos para ditintos niveles de unidades administrativas. Se incluyen versiones *raw* (más detalladas y pesadas) y versiones simplificadas. Se [documentó](https://github.com/PoliticaArgentina/data_warehouse/tree/master/geoAr/script) el proceso de simplificación.
 
@@ -10,13 +10,13 @@ El paquete incluye datos GIS con polígonos para ditintos niveles de unidades ad
 
 -   Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en `{geofaceteAR}`, cuya idea presentamos en la primera edición de LatinR ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)).
 
-> **LatinR: Geofaceting Argentina**
+    -   *LatinR: Geofaceting Argentina*
 
-> [Abstract](https://github.com/TuQmano/geofacet_ARG/blob/master/.LatinR/Geofaceting_Argentina_RuizNicolini.pdf) \| :bar_chart: [Slides](https://www.researchgate.net/publication/327382101_Geofaceting_Argentina_LatinR_2018) \| :package: [{geofaceteAR}](https://github.com/electorArg/geofaceteAR) \| :keyboard: [blogpost](https://www.tuqmano.com/2020/05/22/empaquetar/).
+        [Abstract](https://github.com/TuQmano/geofacet_ARG/blob/master/.LatinR/Geofaceting_Argentina_RuizNicolini.pdf) \| :bar_chart: [Slides](https://www.researchgate.net/publication/327382101_Geofaceting_Argentina_LatinR_2018) \| :package: [{geofaceteAR}](https://github.com/electorArg/geofaceteAR) \| :keyboard: [blogpost](https://www.tuqmano.com/2020/05/22/empaquetar/).
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left"/></a> [:package: {opinAr}](https://github.com/PoliticaArgentina/opinAr)
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/opinAr.PNG?raw=true" width="100" align="left"/></a> [:package: {opinAr}](https://github.com/PoliticaArgentina/opinAr) - Datos de opinión púbica de Argentina:
 
 Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella realiza para su *Índice de Confianza en el Gobierno* (ICG).
 
@@ -44,20 +44,17 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left"/></a> [:package: {legislAr}](https://github.com/PoliticaArgentina/legislAr)
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/legislAr.png?raw=true" width="100" align="left"/></a> [:package: {legislAr}](https://github.com/PoliticaArgentina/legislAr) - Datos legislativos de Argentina:
 
 Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andytow.com/scripts/disciplina/index-d.html) en cuya documentación se detallan las bases de datos disponibles.
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="100" align="left"/></a> {electorAr}
-
-### Datos electorales de Argentina:
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="100" align="left"/></a> [:package: {electorAr}](https://github.com/PoliticaArgentina/opinAr) - Datos electorales de Argentina:
 
 -   [**Escrutinios provisorios**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_provisorios.md) de elecciones para cargos nacionales (presidente, diputados y senadores) desagregados a nivel de mesa electoral para elecciones entre 2003 y 2019. Los archivos originales sin procesar fueron obtenidos de la sección *Descargas* del [blog de Andy Tow](https://www.andytow.com/atlas/totalpais/downloads.html).
 
 -   [**Resultados electorales**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_definitivos.md) agregados de elecciones para cargos multinivel (nacionales y provinciales) entre 1946 y 2019. De descargaron todas las tablas disponibles en el [blog de Andy Tow](https://www.andytow.com/). Es un trabajo en progreso por el que se cuentan procesadas solamente elecciones para cargos ejecutivos (gobernadores y presidentes).
-
 
 ------------------------------------------------------------------------
 
@@ -65,9 +62,7 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="100" align="left"/></a> {discursAr}
-
-### Facilitar el acceso a datos de discursos presidenciales:
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="100" align="left"/></a> :package: {discursAr} - Discursos presidenciales de Argentina:
 
 -   **Discursos de Apertura de Sesiones Ordinarias**
 
@@ -80,4 +75,3 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
     -   Los de Cristina Fernández de Kirchner del repositorio de [Martín Gaitán](https://github.com/mgaitan/discursos_cfk).
 
     -   Los de Mauricio Macri y Alberto Fernández descargados desde el sitio web de [casarosda.gob.ar](https://www.casarosada.gob.ar/informacion/discursos) basados en [código](https://github.com/DiegoKoz/discursos_presidenciales/blob/master/get_data.R) de Diego Kozlowski.
-
