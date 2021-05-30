@@ -75,3 +75,5 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
     -   Los de Cristina Fernández de Kirchner del repositorio de [Martín Gaitán](https://github.com/mgaitan/discursos_cfk).
 
     -   Los de Mauricio Macri y Alberto Fernández descargados desde el sitio web de [casarosda.gob.ar](https://www.casarosada.gob.ar/informacion/discursos) basados en [código](https://github.com/DiegoKoz/discursos_presidenciales/blob/master/get_data.R) de Diego Kozlowski.
+
+![](https://github.com/PoliticaArgentina/data_warehouse/raw/master/hex/collage.png)
