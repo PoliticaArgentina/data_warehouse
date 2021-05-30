@@ -1,8 +1,8 @@
-# Repositorio de Datos de Política Argentina <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/polAr10-10-10.png?raw=true" width="200" align="right"/></a>
+## Repositorio de Datos de Política Argentina <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/polAr10-10-10.png?raw=true" width="200" align="right"/></a>
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left"/></a> [:package: {geoAr}](https://github.com/PoliticaArgentina/geoAr) - Datos *geo* Argentina:
+### <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/geoAr.png?raw=true" width="100" align="left"/></a> [:package: {geoAr}](https://github.com/PoliticaArgentina/geoAr) - Datos *geo* Argentina:
 
 El paquete incluye datos GIS con polígonos para ditintos niveles de unidades administrativas. Se incluyen versiones *raw* (más detalladas y pesadas) y versiones simplificadas. Se [documentó](https://github.com/PoliticaArgentina/data_warehouse/tree/master/geoAr/script) el proceso de simplificación.
 

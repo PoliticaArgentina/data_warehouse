@@ -2,7 +2,7 @@ pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-05-30T23:28Z
+last_built: 2021-05-30T23:31Z
 urls:
   reference: https://politicaargentina.github.io/data_warehouse//reference
   article: https://politicaargentina.github.io/data_warehouse//articles
