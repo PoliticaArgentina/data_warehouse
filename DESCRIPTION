@@ -1,12 +1,12 @@
 Package: data.warehouse
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: polAr project data ware house
+Version: 0.0.1.0
 Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Juan Pablo",
+           family = "Ruiz Nicolini",
+           role = c("aut", "cre", "cph"),
+           email = "juanpabloruiznicolini@gmail.com",
+           comment = c(ORCID = "0000-0002-3138-6343"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8

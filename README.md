@@ -24,15 +24,15 @@ Los datos corresponden al relevamiento que la Universidad Torcuato Di Tella real
 
 > *El ICG tiene como objetivo medir la evolución de la opinión pública respecto de la labor que desarrolla el gobierno nacional. Está diseñado de forma de captar lo que los ciudadanos piensan respecto de aspectos esenciales del gobierno nacional, a partir de la estimación de cinco dimensiones:*
 
-> \_\*La imagen o evaluación general del gobierno.\_
+> *La imagen o evaluación general del gobierno.*
 
-> \_\*La percepción sobre si se gobierna pensando en el bien general o en el de sectores particulares.\_
+> *La percepción sobre si se gobierna pensando en el bien general o en el de sectores particulares.*
 
-> \_\*La eficiencia en la administración del gasto público.\_
+> *La eficiencia en la administración del gasto público.*
 
-> \_\*La honestidad de los miembros del gobierno.\_
+> *La honestidad de los miembros del gobierno.*
 
-> \_\*La capacidad del gobierno para resolver los problemas del país.\_
+> *La capacidad del gobierno para resolver los problemas del país.*
 
 -   El índice se presenta en una escala que varía entre un mínimo de 0 y un máximo de 5.
 
