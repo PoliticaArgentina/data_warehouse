@@ -76,6 +76,6 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
 
 ### Datos electorales de Argentina:
 
--   **Escrutinios provisorios** de elecciones para cargos nacionales (presidente, diputados y senadores) desagregados a nivel de mesa electoral para elecciones entre 2003 y 2019. Los archivos originales sin procesar fueron obtenidos de la sección *Descargas* del [blog de Andy Tow](https://www.andytow.com/atlas/totalpais/downloads.html).
+-   [**Escrutinios provisorios**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_provisorios.md) de elecciones para cargos nacionales (presidente, diputados y senadores) desagregados a nivel de mesa electoral para elecciones entre 2003 y 2019. Los archivos originales sin procesar fueron obtenidos de la sección *Descargas* del [blog de Andy Tow](https://www.andytow.com/atlas/totalpais/downloads.html).
 
--   **Resultados electorales** agregados de elecciones para cargos multinivel (nacionales y provinciales) entre 1946 y 2019. De descargaron todas las tablas disponibles en el [blog de Andy Tow](https://www.andytow.com/). Es un trabajo en progreso por el que se cuentan procesadas solamente elecciones para cargos ejecutivos (gobernadores y presidentes).
+-   [**Resultados electorales**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_definitivos.md)agregados de elecciones para cargos multinivel (nacionales y provinciales) entre 1946 y 2019. De descargaron todas las tablas disponibles en el [blog de Andy Tow](https://www.andytow.com/). Es un trabajo en progreso por el que se cuentan procesadas solamente elecciones para cargos ejecutivos (gobernadores y presidentes).
