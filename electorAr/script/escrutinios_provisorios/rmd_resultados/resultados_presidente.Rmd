@@ -1,0 +1,667 @@
+---
+title: "Resultados Presidente"
+output: html_notebook
+---
+
+
+
+
+
+### 2003 
+
+```{sql gral2003, connection=Arg03,  output.var="gral2003"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0001",
+"0003",
+"0005",
+"0014",
+"0020",
+"0022",
+"0023",
+"0030",
+"0037",
+"0050",
+"0051",
+"0052",
+"0053",
+"0131",
+"0132",
+"0133",
+"0134",
+"0135",
+"0136",
+"0137",
+"0138")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0001"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0003"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0005"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0014"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0020"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0022"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0023"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0030"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0037"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0050"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0051"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0052"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0053"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0134"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0136"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0137"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0138"	 THEN votVotosPartido END)
+        FROM
+        VotosCandidaturaMesasPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0001") AS "0001", 
+              sum("0003") AS "0003", 
+              sum("0005") AS "0005", 
+              sum("0014") AS "0014",
+              sum("0020") AS "0020", 
+              sum("0022") AS "0022",
+              sum("0023") AS "0023", 
+              sum("0030") AS "0030", 
+              sum("0037") AS "0037", 
+              sum("0050") AS "0050",
+              sum("0051") AS "0051", 
+              sum("0052") AS "0052", 
+              sum("0053") AS "0053", 
+              sum("0131") AS "0131", 
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133",
+              sum("0134") AS "0134",
+              sum("0135") AS "0135",
+              sum("0136") AS "0136",
+              sum("0137") AS "0137",
+              sum("0138") AS "0138"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN Departamento ON vot_proCodigoProvincia = dep_proCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(gral2003, "../../data/00.PRESIDENCIAL/presi_gral2003.csv")
+
+```
+
+
+
+### 2007 
+
+```{sql gral2007, connection=Arg07,  output.var="gral2007"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0014",		
+"0023",	
+"0030",	
+"0037",	
+"0038",	 	
+"0048",			
+"0051",			
+"0056",			
+"0057",			
+"0059",			
+"0060",			
+"0131",			
+"0132",			
+"0133",		
+"0134",		
+"0135",		
+"0254")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0014"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0023"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0030"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0037"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0038"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0048"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0051"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0056"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0057"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0059"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0060"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0134"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0254"	 THEN votVotosPartido END)
+        FROM
+        VotosCandidaturaMesasPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0014") AS "0014", 
+              sum("0023") AS "0023", 
+              sum("0030") AS "0030", 
+              sum("0037") AS "0037",
+              sum("0038") AS "0038", 
+              sum("0048") AS "0048",
+              sum("0051") AS "0051", 
+              sum("0056") AS "0056", 
+              sum("0057") AS "0057", 
+              sum("0059") AS "0059",
+              sum("0060") AS "0060", 
+              sum("0131") AS "0131", 
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133", 
+              sum("0134") AS "0134", 
+              sum("0135") AS "0135", 
+              sum("0254") AS "0254"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN Departamento ON vot_proCodigoProvincia = dep_proCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(gral2007, "../00.PRESIDENCIAL/presi_gral2007.csv")
+
+```
+
+
+### 2011
+
+
+#### PASO
+
+```{sql paso2011, connection=Arg11P,  output.var="paso2011"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0047",		
+"0131",	
+"0132",	
+"0133",	
+"0134",	 	
+"0135",			
+"0137")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0047"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0134"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0137"	 THEN votVotosPartido END)
+        FROM
+        VotosCandidaturaMesasPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0047") AS "0047", 
+              sum("0131") AS "0131", 
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133",
+              sum("0134") AS "0134", 
+              sum("0135") AS "0135",
+              sum("0137") AS "0137"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN Departamento ON vot_proCodigoProvincia = dep_proCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(paso2011, "../00.PRESIDENCIAL/presi_paso2011.csv")
+
+```
+
+
+#### GRAL
+
+```{sql gral2011, connection=Arg11G,  output.var="gral2011"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0047",		
+"0131",	
+"0132",	
+"0133",	
+"0134",	 	
+"0135",			
+"0137")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0047"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0134"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0137"	 THEN votVotosPartido END)
+        FROM
+        VotosCandidaturaMesasPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0047") AS "0047", 
+              sum("0131") AS "0131", 
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133",
+              sum("0134") AS "0134", 
+              sum("0135") AS "0135",
+              sum("0137") AS "0137"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN Departamento ON vot_proCodigoProvincia = depCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(gral2011, "../00.PRESIDENCIAL/presi_gral2011.csv")
+
+```
+
+### 2015
+
+
+#### PASO
+
+```{sql paso2015, connection=Arg15P,  output.var="paso2015"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0013",		
+"0057",	
+"0081",	
+"0131",	
+"0132",	 	
+"0133",			
+"0134",			
+"0135",			
+"0136",			
+"0137",			
+"0138")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0013"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0057"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0081"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0134"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0136"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0137"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0138"	 THEN votVotosPartido END)
+        FROM
+        MesasCandidaturaPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0013") AS "0013", 
+              sum("0057") AS "0057", 
+              sum("0081") AS "0081", 
+              sum("0131") AS "0131",
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133",
+              sum("0134") AS "0134", 
+              sum("0135") AS "0135", 
+              sum("0136") AS "0136", 
+              sum("0137") AS "0137",
+              sum("0138") AS "0138"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN NomAmbitos ON vot_proCodigoProvincia = depCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(paso2015, "../00.PRESIDENCIAL/presi_paso2015.csv")
+
+```
+
+
+#### GRAL
+
+```{sql gral2015, connection=Arg15G,  output.var="gral2015"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0131",		
+"0132",	
+"0133",	
+"0135",	
+"0137",	 	
+"0138")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0132"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0133"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END),
+              max(CASE WHEN vot_parCodigo = "0137"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0138"	 THEN votVotosPartido END)
+        FROM
+        MesasCandidaturaPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0131") AS "0131", 
+              sum("0132") AS "0132", 
+              sum("0133") AS "0133", 
+              sum("0135") AS "0135",
+              sum("0137") AS "0137", 
+              sum("0138") AS "0138"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN NomAmbitos ON vot_proCodigoProvincia = depCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+write_csv(gral2015, "../00.PRESIDENCIAL/presi_gral2015.csv")
+
+```
+
+
+#### GRAL
+
+```{sql balota2015, connection=Arg15B,  output.var="balota2015"}
+WITH votos (vot_proCodigoProvincia, vot_depCodigoDepartamento, vot_mesCodigoCircuito, vot_mesCodigoMesa,
+"0131",		
+"0135")
+AS
+(SELECT
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa,
+              max(CASE WHEN vot_parCodigo = "0131"	 THEN votVotosPartido END), 
+              max(CASE WHEN vot_parCodigo = "0135"	 THEN votVotosPartido END)
+        FROM
+        MesasCandidaturaPresidente
+        GROUP BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa
+        ORDER BY
+        vot_proCodigoProvincia,
+        vot_depCodigoDepartamento,
+        vot_mesCodigoCircuito,
+        vot_mesCodigoMesa)
+SELECT
+        vot_proCodigoProvincia AS codprov,
+        depNombre AS depto,
+        mes_depCodigoDepartamento AS coddepto,
+         vot_mesCodigoCircuito AS circuito,
+         vot_mesCodigoMesa AS mesa,
+  --      sum(mesVotosValidos) AS validos,
+        sum(mesElectores) AS electores,
+        sum(mesVotosEnBlanco) AS blancos,
+        sum(mesVotosNulos) AS nulos,
+              sum("0131") AS "0131", 
+              sum("0135") AS "0135"
+        FROM
+        votos
+           INNER JOIN MesasPresidente ON vot_proCodigoProvincia = mes_proCodigoProvincia 
+                                AND vot_depCodigoDepartamento = mes_depCodigoDepartamento
+                                AND vot_mesCodigoCircuito = mesCodigoCircuito
+                                AND vot_mesCodigoMesa = mesCodigoMesa
+    INNER JOIN NomAmbitos ON vot_proCodigoProvincia = depCodigoProvincia 
+                         AND vot_depCodigoDepartamento = depCodigoDepartamento
+     GROUP BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa
+     ORDER BY
+     vot_proCodigoProvincia,
+     vot_depCodigoDepartamento,
+     depNombre, 
+     vot_mesCodigoCircuito,
+     vot_mesCodigoMesa;
+```
+
+
+```{r}
+
+readr::write_csv(balota2015, "00.PRESIDENCIAL/arg_presi_balota2015.csv")
+
+```
+
+
+
+
+
+
+

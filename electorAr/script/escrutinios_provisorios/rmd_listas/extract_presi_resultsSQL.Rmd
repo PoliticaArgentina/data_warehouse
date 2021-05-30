@@ -1,0 +1,196 @@
+---
+title: "Export Listas Elecciones Presidenciales Argentinas"
+output: html_notebook
+---
+
+```{r librerias, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+
+```{sql Deptos_Provincias, connection=Arg07,output.var = "Deptos_Provincias",}
+SELECT DISTINCT
+depCodigoDepartamento,
+dep_proCodigoProvincia,
+depNombre
+FROM
+Departamento
+```
+
+
+
+* **TABLA CON CODIGOS DE PROVINCIA Y DEPARTAMENTO DE INDRA (Eleccion 07 del SQL anterior)**
+
+```{r codprovs, echo=F}
+Deptos_Provincias %>% 
+  as_tibble() %>%
+  filter(depCodigoDepartamento == 999) %>% 
+  print(n = 25)
+```
+
+
+
+
+* **EXPORTO LISTAS DE CANDIDATOS PRESIDENCIALES (2003 - 2015)**
+
+
+# 2003
+
+```{sql Listas03Presi, connection=Arg03, output.var="listas_presi_gral2003"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasPresidente c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_gral2003, "../presidente/listas_presi_gral2003.csv")
+
+```
+
+
+
+
+# 2007
+
+```{sql Listas07Presi, connection=Arg07, output.var="listas_presi_gral2007"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasPresidente c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_gral2007, "../presidente/listas_presi_gral2007.csv")
+
+```
+
+
+# 2011  PASO y GENERALES
+
+## Generales
+
+```{sql Listas11Presi, connection=Arg11G, output.var="listas_presi_gral2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasPresidente c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_gral2011, "../presidente/listas_presi_gral2011.csv")
+
+```
+
+
+## PASO
+
+```{sql Listas11PresiPaso, connection=Arg11P, output.var="listas_presi_paso2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasPresidente c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_gral2011, "../presidente/listas_presi_paso2011.csv")
+
+```
+
+
+
+# 2015  PASO -  GENERALES y BALOTAJE
+
+## Generales
+
+```{sql Listas15Presi, connection=Arg15G, output.var="listas_presi_gral2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaPresidente c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_gral2015, "../presidente/listas_presi_gral2015.csv")
+
+```
+
+
+## PASO
+
+```{sql Listas15PresiPASO, connection=Arg15P, output.var="listas_presi_paso2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaPresidente c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_paso2015, "../presidente/listas_presi_paso2015.csv")
+
+```
+
+
+
+## BALOTAJE
+
+
+```{sql Listas15PresiBalota, connection=Arg15B, output.var="listas_presi_balota2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaPresidente c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_presi_balota2015, "../presidente/listas_presi_balota2015.csv")
+
+```
+
+
+
+
+

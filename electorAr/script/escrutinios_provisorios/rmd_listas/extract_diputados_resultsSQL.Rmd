@@ -1,0 +1,300 @@
+---
+title: "Export Listas Elecciones Diputados de Argentinas"
+output: html_notebook
+---
+
+```{r librerias, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+
+```{sql Deptos_Provincias, connection=Arg15P,output.var = "Deptos_Provincias"}
+SELECT DISTINCT
+depCodigoDepartamento,
+depCodigoProvincia,
+depNombre
+FROM
+NomAmbitos
+```
+
+
+
+* **EXPORTO LISTAS DE CANDIDATOS DIPUTADOS (2003 - 2017)**
+
+
+
+## 2003
+
+
+
+```{sql Listas03SenGral, connection=Arg03, output.var="listas_dip_gral2003"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2007, "../diputados/listas_dip_gral2003.csv")
+
+```
+
+
+
+## 2005 
+
+
+
+```{sql Listas05SenGral, connection=Arg05, output.var="listas_dip_gral2005"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2007, "../diputados/listas_dip_gral2007.csv")
+
+```
+
+## 2007
+
+
+
+```{sql Listas07SenGral, connection=Arg07, output.var="listas_dip_gral2007"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2007, "../diputados/listas_dip_gral2007.csv")
+
+```
+
+
+## 2009
+
+```{sql Listas09Sen, connection=Arg09, output.var="listas_dip_gral2009"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2009, "../diputados/listas_dip_gral2009.csv")
+
+```
+
+## 2011
+
+### GRAL
+
+```{sql Listas11SenGral, connection=Arg11G, output.var="listas_dip_gral2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2011, "../diputados/listas_dip_gral2011.csv")
+
+```
+
+
+### PASO
+
+```{sql Listas11SenPASO, connection=Arg11P, output.var="listas_dip_paso2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_paso2011, "../diputados/listas_dip_paso2011.csv")
+
+```
+
+
+
+
+## 2013
+
+### GRAL
+
+```{sql Listas13SenGral, connection=Arg13G, output.var="listas_dip_gral2013"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2013, "../diputados/listas_dip_gral2013.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas13SenPASO, connection=Arg13P, output.var="listas_dip_paso2013"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasDNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_paso2013, "../diputados/listas_dip_paso2013.csv")
+
+```
+
+
+
+## 2015 
+
+### GRAL
+
+```{sql Listas15SenGral, connection=Arg15G, output.var="listas_dip_gral2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaDNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2015, "../diputados/listas_dip_gral2015.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas15SenPASO, connection=Arg15P, output.var="listas_dip_paso2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaDNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_paso2015, "../diputados/listas_dip_paso2015.csv")
+
+```
+
+
+
+## 2017
+
+### GRAL
+
+```{sql Listas17SenGral, connection=Arg17G, output.var="listas_dip_gral2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaDNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_gral2017, "../diputados/listas_dip_gral2017.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas17SenPASO, connection=Arg17P, output.var="listas_dip_paso2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaDNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_dip_paso2017, "../diputados/listas_dip_paso2017.csv")
+
+```
+
+
+
+

@@ -1,0 +1,368 @@
+---
+title: "Export Listas Elecciones Senadores de Argentinas"
+output: html_notebook
+---
+
+```{r librerias, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+
+```{sql Deptos_Provincias, connection=Arg15P,output.var = "Deptos_Provincias"}
+SELECT DISTINCT
+depCodigoDepartamento,
+depCodigoProvincia,
+depNombre
+FROM
+NomAmbitos
+```
+
+
+
+Grupos de provincia que eligen alternadamente Senadores Nacionales cada dos años. 
+```{r grupos_codprov}
+
+
+grupo1 <-  c("03", "04", "05", "07", "11", "13", "21", "23")
+
+grupo2 <- c("02", "09", "10", "12", "14", "18", "19", "20")
+
+
+grupo3 <- c("01",  "06", "08", "15", "16", "17", "22", "24")
+
+
+```
+
+
+* **EXPORTO LISTAS DE CANDIDATOS SENADORES (2007 - 2015) POR GURPO DE PROVINCIAS**
+
+
+# GRUPO 1 (2003, 2009 y 2015)
+
+
+## 2003 
+
+NO HAY DATA EN LA TABLA VotosCandidaturasSNacionales
+
+```{sql Listas03Sen, connection=Arg03, output.var="listas_sen_gral2003"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2009, "../senadores/listas_sen_gral2009.csv")
+
+```
+
+
+
+## 2009
+
+```{sql Listas09Sen, connection=Arg09, output.var="listas_sen_gral2009"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2009, "../senadores/listas_sen_gral2009.csv")
+
+```
+
+## 2015 
+
+### GRAL
+
+```{sql Listas15SenGral, connection=Arg15G, output.var="listas_sen_gral2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2015, "../senadores/listas_sen_gral2015.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas15SenPASO, connection=Arg15P, output.var="listas_sen_paso2015"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_paso2015, "../senadores/listas_sen_paso2015.csv")
+
+```
+
+
+
+# GRUPO 2 (2005, 2011 y 2017)
+
+
+## 2005
+
+### GRAL
+
+```{sql Listas05SenGral, connection=Arg05, output.var="listas_sen_gral2005"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2005, "../senadores/listas_sen_gral2005.csv")
+
+```
+
+
+
+## 2011
+
+### GRAL
+
+```{sql Listas11SenGral, connection=Arg11G, output.var="listas_sen_gral2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2011, "../senadores/listas_sen_gral2011.csv")
+
+```
+
+
+### PASO
+
+```{sql Listas11SenPASO, connection=Arg11P, output.var="listas_sen_paso2011"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_paso2011, "../senadores/listas_sen_paso2011.csv")
+
+```
+
+
+## 2017
+
+### GRAL
+
+```{sql Listas17SenGral, connection=Arg17G, output.var="listas_sen_gral2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2017, "../senadores/listas_sen_gral2017.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas17SenPASO, connection=Arg17P, output.var="listas_sen_paso2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_paso2017, "../senadores/listas_sen_paso2017.csv")
+
+```
+
+
+
+
+# GRUPO 3 (2007, 2013 y 2019)
+
+## 2007
+
+### GRAL
+
+```{sql Listas07SenGral, connection=Arg07, output.var="listas_sen_gral2007"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidaturaMesasSNacionales c INNER JOIN
+Partidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2007, "../senadores/listas_sen_gral2007.csv")
+
+```
+
+
+
+## 2013
+
+### GRAL
+
+```{sql Listas13SenGral, connection=Arg13G, output.var="listas_sen_gral2013"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+VotosCandidatSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2013, "../senadores/listas_sen_gral2013.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas13SenPASO, connection=Arg13P, output.var="listas_sen_paso2013"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_paso2013, "../senadores/listas_sen_paso2013.csv")
+
+```
+
+
+
+## 2019
+
+### GRAL
+
+```{sql Listas19SenGral, connection=Arg17G, output.var="listas_sen_gral2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_gral2017, "../senadores/listas_sen_gral2017.csv")
+
+```
+
+
+### PASO
+
+
+```{sql Listas19SenPASO, connection=Arg17P, output.var="listas_sen_paso2017"}
+SELECT DISTINCT
+vot_parCodigo,
+vot_proCodigoProvincia, 
+parDenominacion
+FROM
+MesasCandidaturaSNacionales c INNER JOIN
+NomPartidos p ON c.vot_parCodigo = p.parCodigo
+--WHERE
+--vot_proCodigoProvincia = '23'
+```
+
+
+```{r}
+write_csv(listas_sen_paso2017, "../senadores/listas_sen_paso2017.csv")
+
+```
+
+
