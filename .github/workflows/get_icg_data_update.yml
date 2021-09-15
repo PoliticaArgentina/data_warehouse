@@ -1,9 +1,9 @@
 on:
-  #push:
-  schedule:
+  push:
+  #schedule:
     # https://crontab.cronhub.io/
     #- cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
-    - cron: "0 10 15,25 * *" #  at 10:00 AM, on day 15 and 25 of the month
+    #- cron: "0 10 15,25 * *" #  at 10:00 AM, on day 15 and 25 of the month
 jobs:
   generate-data:
     runs-on: ${{ matrix.config.os }}
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install libcurl
         run: |
-          sudo apt-get update libcurl4-openssl-dev
+          sudo apt-get install libcurl4-openssl-dev --fix-broken
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
