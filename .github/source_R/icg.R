@@ -11,7 +11,7 @@ library(readr) # Read Rectangular Text Data, CRAN v1.4.0
 library(glue) # Interpreted String Literals, CRAN v1.4.2 
 
  
-# DATA SOURCE URL AND PATH  
+# DATA SOURCE URL AND PATH
 main = "https://www.utdt.edu"
 url = "https://www.utdt.edu/ver_contenido.php?id_contenido=17876&id_item_menu=28756"
 
@@ -85,8 +85,7 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
     
     # Write waves file
     
-    readr::write_csv(waves, glue("opinAr/data_raw/icg_waves_actualizado{Sys.Date()}.csv")
-                                )
+    readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
     
     }
 
