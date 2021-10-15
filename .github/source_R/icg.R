@@ -8,10 +8,10 @@ library(haven) # Import and Export 'SPSS', 'Stata' and 'SAS' Files, CRAN v2.3.1
 library(janitor) # Simple Tools for Examining and Cleaning Dirty Data, CRAN v2.1.0
 library(dplyr) # A Grammar of Data Manipulation, CRAN v1.0.5
 library(readr) # Read Rectangular Text Data, CRAN v1.4.0
-library(glue) # Interpreted String Literals, CRAN v1.4.2
+library(glue) # Interpreted String Literals, CRAN v1.4.2 
 
-
-# DATA SOURCE URL AND PATH
+ 
+# DATA SOURCE URL AND PATH  
 main = "https://www.utdt.edu"
 url = "https://www.utdt.edu/ver_contenido.php?id_contenido=17876&id_item_menu=28756"
 
@@ -85,7 +85,8 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
     
     # Write waves file
     
-    readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
+    readr::write_csv(waves, glue("opinAr/data_raw/icg_waves_actualizado{Sys.Date()}.csv")
+                                )
     
     }
 
