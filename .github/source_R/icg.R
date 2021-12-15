@@ -23,7 +23,7 @@ link <- rvest::read_html(url) %>%
   rvest::html_attr('href') %>%
   as_tibble() %>% 
   dplyr::filter(stringr::str_detect(value,"\\.zip")) %>% # ICG dta.zip file
- # dplyr::transmute(value = as.character(glue::glue("{main}{value}"))) %>%  # Create file link 
+  dplyr::transmute(value = as.character(glue::glue("{main}{value}"))) %>%  # Create file link 
   dplyr::pull() 
 
 
