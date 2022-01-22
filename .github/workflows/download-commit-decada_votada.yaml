@@ -3,7 +3,7 @@ on:
    schedule:
     # https://crontab.cronhub.io/
    # - cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
-     - cron: "0 0 0 1 * *" #  at 10:00 AM, on day 15 and 25 of the month
+     - cron: "1 1 1 * *" #  at 10:00 AM, on day 15 and 25 of the month
 jobs:
   generate-data:
     runs-on: ${{ matrix.config.os }}
