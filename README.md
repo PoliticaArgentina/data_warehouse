@@ -56,15 +56,15 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
 
 -   [**Resultados electorales**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_definitivos.md) agregados de elecciones para cargos multinivel (nacionales y provinciales) entre 1946 y 2019. De descargaron todas las tablas disponibles en el [blog de Andy Tow](https://www.andytow.com/). Es un trabajo en progreso por el que se cuentan procesadas solamente elecciones para cargos ejecutivos (gobernadores y presidentes).
 
-------------------------------------------------------------------------
 
-# En proceso
 
 ------------------------------------------------------------------------
 
 ## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/discursAr.png?raw=true" width="100" align="left"/></a> :package: {discursAr} - Discursos presidenciales de Argentina:
 
 -   **Discursos de Apertura de Sesiones Ordinarias**
+
+# En proceso
 
 -   **Discursos de Gestión** (Trabajo en proceso):
 

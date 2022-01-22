@@ -52,11 +52,12 @@ data <- files %>%
 
 
 # FECHA DE ULTIMA VOTACION EN REPOSITORIO
-test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv") %>% 
-  select(fecha = 5) %>% 
-  arrange(desc(fecha)) %>% 
-  slice(1) %>% 
-  pull(fecha)
+test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv", 
+                        col_names = FALSE) %>% 
+  dplyr::select(fecha = X5) %>% 
+  dplyr::arrange(desc(fecha)) %>% 
+  dplyr::slice(1) %>% 
+  dplyr::pull(fecha)
 
 
 
@@ -64,7 +65,7 @@ new <- data %>%
   filter(stringr::str_detect(file , "asuntos-di")) %>% 
   select(data) %>% 
   purrr::flatten_dfr()  %>% 
-  select(fecha = 5) %>% 
+  select(fecha = X5) %>% 
   arrange(desc(fecha)) %>% 
   slice(1) %>% 
   pull(fecha)
