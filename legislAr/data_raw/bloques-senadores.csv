@@ -1,69 +1,70 @@
-"1","Afirmación para una República Igualitaria","#01dfa5"
-"2","Coalición Cívica","#2ca02c"
-"3","Concertación Plural",
-"4","Cruzada Renovadora",
-"5","Encuentro de los Rionegrinos",
-"6","Esperanza Federal",
-"7","Federalismo Santafesino",
-"8","Federalismo y Liberación",
-"9","Frente Cívico de Córdoba",
-"10","Frente Cívico Jujeño",
-"11","Frente Cívico por Santiago","#4b088a"
-"12","Frente Cívico y Social de Catamarca",
-"13","Frente de Todos","#1f77b4"
-"14","Frente Grande",
-"15","FrePaSo",
-"16","Fuerza Republicana",
-"17","GEN",
-"18","Justicialista","#0101DF"
-"19","Justicialista 8 de Octubre",
-"20","Justicialista La Pampa",
-"21","Justicialista para el Dialogo de Los Argentinos",
-"22","Justicialista San Luis","#0b615e"
-"23","Justicialista-Frente para la Victoria","#1f77b4"
-"24","Liberal de Corrientes",
-"25","Movimiento Popular Neuquino",
-"26","No integra Bloque",
-"27","Nuevo Encuentro",
-"28","Partido Nuevo",
-"29","Por Tierra del Fuego",
-"30","Producción y Trabajo",
-"31","Proyecto Buenos Aires Federal",
-"32","Radical Independiente",
-"33","Radical Rionegrino",
-"34","Renovador de la Concordia",
-"35","Renovador de Salta",
-"36","Santa Fe Federal",
-"37","Socialista","#fa58f4"
-"38","Trabajo y Dignidad",
-"39","Unión Cívica Radical","#d62728"
-"40","Vecinalista - Partido Nuevo",
-"41","Lealtad y Dignidad Justicialista","#0b615e"
-"42","Tucumán",
-"43","Partido de la Victoria",
-"44","Puntano Independiente",
-"45","Justicialista 17 de Octubre",
-"46","Justicialismo por el Cambio",
-"47","Frente Popular",
-"48","Frente Progresista-CC-ARI",
-"49","Movimiento Popular Fueguino",
-"50","Pro y Unión por Entre Ríos ","#e7ba52"
-"51","Proyecto Sur-UNEN",
-"98","Partido Liberal",
-"52","Frente Pro","#e7ba52"
-"53","PARES",
-"54","Unión por Córdoba",
-"55","Chubut Somos Todos",
-"56","Misiones","#EDBB99"
-"57","Avanzar San Luis",
-"58","Frente para la Victoria-PJ","#1f77b4"
-"59","Justicialista Chubut",
-"60","Río - Frente Progresista","#F0F0F0"
-"61","Unidad Justicialista","#bf5b17"
-"99","Sin Bloque","#F0F0F0"
-"62","Peronismo Tucumán","#2E9AFE"
-"63","Justicialismo San Luis",
-"64","Peronismo Republicano Río Negro",
-"65","Movimiento Neuquino",
-"66","Mediar",
-"67","Juntos Somos Río Negro",
+X1,X2,X3
+1,Afirmación para una República Igualitaria,#01dfa5
+2,Coalición Cívica,#2ca02c
+3,Concertación Plural,NA
+4,Cruzada Renovadora,NA
+5,Encuentro de los Rionegrinos,NA
+6,Esperanza Federal,NA
+7,Federalismo Santafesino,NA
+8,Federalismo y Liberación,NA
+9,Frente Cívico de Córdoba,NA
+10,Frente Cívico Jujeño,NA
+11,Frente Cívico por Santiago,#4b088a
+12,Frente Cívico y Social de Catamarca,NA
+13,Frente de Todos,#1f77b4
+14,Frente Grande,NA
+15,FrePaSo,NA
+16,Fuerza Republicana,NA
+17,GEN,NA
+18,Justicialista,#0101DF
+19,Justicialista 8 de Octubre,NA
+20,Justicialista La Pampa,NA
+21,Justicialista para el Dialogo de Los Argentinos,NA
+22,Justicialista San Luis,#0b615e
+23,Justicialista-Frente para la Victoria,#1f77b4
+24,Liberal de Corrientes,NA
+25,Movimiento Popular Neuquino,NA
+26,No integra Bloque,NA
+27,Nuevo Encuentro,NA
+28,Partido Nuevo,NA
+29,Por Tierra del Fuego,NA
+30,Producción y Trabajo,NA
+31,Proyecto Buenos Aires Federal,NA
+32,Radical Independiente,NA
+33,Radical Rionegrino,NA
+34,Renovador de la Concordia,NA
+35,Renovador de Salta,NA
+36,Santa Fe Federal,NA
+37,Socialista,#fa58f4
+38,Trabajo y Dignidad,NA
+39,Unión Cívica Radical,#d62728
+40,Vecinalista - Partido Nuevo,NA
+41,Lealtad y Dignidad Justicialista,#0b615e
+42,Tucumán,NA
+43,Partido de la Victoria,NA
+44,Puntano Independiente,NA
+45,Justicialista 17 de Octubre,NA
+46,Justicialismo por el Cambio,NA
+47,Frente Popular,NA
+48,Frente Progresista-CC-ARI,NA
+49,Movimiento Popular Fueguino,NA
+50,Pro y Unión por Entre Ríos,#e7ba52
+51,Proyecto Sur-UNEN,NA
+98,Partido Liberal,NA
+52,Frente Pro,#e7ba52
+53,PARES,NA
+54,Unión por Córdoba,NA
+55,Chubut Somos Todos,NA
+56,Misiones,#EDBB99
+57,Avanzar San Luis,NA
+58,Frente para la Victoria-PJ,#1f77b4
+59,Justicialista Chubut,NA
+60,Río - Frente Progresista,#F0F0F0
+61,Unidad Justicialista,#bf5b17
+99,Sin Bloque,#F0F0F0
+62,Peronismo Tucumán,#2E9AFE
+63,Justicialismo San Luis,NA
+64,Peronismo Republicano Río Negro,NA
+65,Movimiento Neuquino,NA
+66,Mediar,NA
+67,Juntos Somos Río Negro,NA
