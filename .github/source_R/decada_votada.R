@@ -95,7 +95,6 @@ default <- NULL
                     .f = ~write_csv(.x, 
                                     file = glue::glue("legislAr/data_raw/{.y}")))
       
-      
     
     }
 
