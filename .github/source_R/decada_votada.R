@@ -56,7 +56,7 @@ dim_data <- dim(data$data[[1]])[1] # FILAS EN DATA DE FUENTE DE DATOS
 test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv", 
                         col_names = FALSE) 
 
-dim_test <- dim(test)
+dim_test <- dim(test)[1]
 
 
 # Fail safely when online source is not available
