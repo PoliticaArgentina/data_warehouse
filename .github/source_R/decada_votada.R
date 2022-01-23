@@ -42,7 +42,7 @@ files <- tidyr::separate(data = tidyr::as_tibble(csv_files),
                          sep = "/", remove = FALSE)
 
 
-datos <- files %>% 
+data <- files %>% 
   dplyr::mutate(data = purrr::map2(.x = url,
                                    .y =  value,
                                    ~ readr::read_csv(.y, col_names = FALSE)))
@@ -50,34 +50,13 @@ datos <- files %>%
 
 #### CHEQUEO SI HAY DATOS MAS NUEVOS####
 
+dim_data <- dim(data$data[[1]])[1] # FILAS EN DATA DE FUENTE DE DATOS
 
-# FECHA DE ULTIMA VOTACION EN REPOSITORIO
+# CANTIDAD DE REGISTROS EN REPOSITORIO
 test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv", 
-                        col_names = TRUE) %>% 
-  dplyr::arrange(desc(X5)) %>% 
-  dplyr::slice(1) %>% 
-  dplyr::pull(X5)
+                        col_names = FALSE) 
 
-
-
-new <- datos %>% 
-  filter(stringr::str_detect(file , "asuntos-di")) %>% 
-  select(data) %>% 
-  purrr::flatten_dfr()  %>% 
-  dplyr::arrange(desc(X5)) %>% 
-  dplyr::slice(1) %>% 
-  dplyr::pull(X5)
-
-  
-
-
-# Load data from temfile path workflow
-
-# Set default value for try()
-
-
-default <- NULL
-
+dim_test <- dim(test)
 
 
 # Fail safely when online source is not available
@@ -89,9 +68,9 @@ default <- NULL
     } else {
 
       
-      datos %>% 
-        purrr::map2(.x = datos$data, 
-                    .y = datos$file, 
+      data %>% 
+        purrr::map2(.x = data$data, 
+                    .y = data$file, 
                     .f = ~write_csv(.x, 
                                     file = glue::glue("legislAr/data_raw/{.y}")))
       
