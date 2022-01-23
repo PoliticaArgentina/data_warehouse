@@ -42,7 +42,7 @@ files <- tidyr::separate(data = tidyr::as_tibble(csv_files),
                          sep = "/", remove = FALSE)
 
 
-data <- files %>% 
+datos <- files %>% 
   dplyr::mutate(data = purrr::map2(.x = url,
                                    .y =  value,
                                    ~ readr::read_csv(.y, col_names = FALSE)))
@@ -53,14 +53,14 @@ data <- files %>%
 
 # FECHA DE ULTIMA VOTACION EN REPOSITORIO
 test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv", 
-                        col_names = FALSE) %>% 
+                        col_names = TRUE) %>% 
   dplyr::arrange(desc(X5)) %>% 
   dplyr::slice(1) %>% 
   dplyr::pull(X5)
 
 
 
-new <- data %>% 
+new <- datos %>% 
   filter(stringr::str_detect(file , "asuntos-di")) %>% 
   select(data) %>% 
   purrr::flatten_dfr()  %>% 
@@ -89,9 +89,9 @@ default <- NULL
     } else {
 
       
-      data %>% 
-        purrr::map2(.x = data$data, 
-                    .y = data$file, 
+      datos %>% 
+        purrr::map2(.x = datos$data, 
+                    .y = datos$file, 
                     .f = ~write_csv(.x, 
                                     file = glue::glue("legislAr/data_raw/{.y}")))
       
