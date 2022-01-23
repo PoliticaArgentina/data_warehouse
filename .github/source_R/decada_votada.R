@@ -61,7 +61,7 @@ dim_test <- dim(test)[1]
 
 # Fail safely when online source is not available
 
-  if(test > new){
+  if(dim_test > dim_data){
     
     message("No new data @ 'La Decada Votada' " )
    
