@@ -21,4 +21,6 @@ Imports:
     rvest, 
     readr, 
     dplyr, 
-    purrr
+    purrr, 
+    tidyr, 
+    glue
