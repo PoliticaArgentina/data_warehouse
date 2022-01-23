@@ -20,4 +20,5 @@ Imports:
     magrittr,
     rvest, 
     readr, 
-    dplyr
+    dplyr, 
+    purrr
