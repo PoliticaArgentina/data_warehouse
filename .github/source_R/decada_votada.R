@@ -65,7 +65,9 @@ dim_test <- dim(test)[1]
     
     message("No new data @ 'La Decada Votada' " )
     
-    file.edit(glue::glue("legislAr/data_check/{Sys.Date()}no_new_data.md"))
+    df <- data.frame(msje ="No new data @ 'La Decada Votada'")
+    
+    write.csv(df, file = glue::glue("legislAr/data_check/{Sys.Date()}no_new_data.md"))
 
     
     } else {
