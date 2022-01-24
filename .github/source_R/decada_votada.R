@@ -67,7 +67,7 @@ dim_test <- dim(test)[1]
     
     df <- data.frame(msje ="No new data @ 'La Decada Votada'")
     
-    write.csv(df, file = glue::glue("legislAr/data_check/{Sys.Date()}no_new_data.csNo new data @ 'La Decada Votada'"))
+    write.csv(df, file = glue::glue("legislAr/data_check/{Sys.Date()}.csv"))
 
     
     } else {
