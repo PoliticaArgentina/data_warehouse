@@ -68,7 +68,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git pull
           git add --all
-          git commit -am "add 'Decada Votada' new data  on `date +'%Y-%m-%d %H:%M:%S'`"
+          git commit -am "checked 'Decada Votada' 4 new data  on `date +'%Y-%m-%d %H:%M:%S'`"
           git push 
       - name: Session info
         run: |
