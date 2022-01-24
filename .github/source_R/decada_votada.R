@@ -64,7 +64,10 @@ dim_test <- dim(test)[1]
   if(dim_test > dim_data){
     
     message("No new data @ 'La Decada Votada' " )
-   
+    
+    file.edit(glue::glue("legislAr/data_check/{Sys.Date()}no_new_data.md"))
+
+    
     } else {
 
       
