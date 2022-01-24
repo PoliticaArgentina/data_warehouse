@@ -1,5 +1,5 @@
 on:
-  push:
+  #push:
   #schedule:
     # https://crontab.cronhub.io/
     #- cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
