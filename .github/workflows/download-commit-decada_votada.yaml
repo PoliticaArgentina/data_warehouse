@@ -1,7 +1,7 @@
 on:
   push:
     branches: [main, master]
-  3schedule:
+  #schedule:
     # https://crontab.cronhub.io/
    #  - cron: "*  *  *  *  *" # TEST CRON EVERY MINUTE
     # - cron: "1 1 1 * *" #  at 10:00 AM, on day 15 and 25 of the month
