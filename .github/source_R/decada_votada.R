@@ -54,34 +54,34 @@ dim_data <- dim(data$data[[1]])[1] # FILAS EN DATA DE FUENTE DE DATOS
 
 # CANTIDAD DE REGISTROS EN REPOSITORIO
 test <- readr::read_csv("https://github.com/PoliticaArgentina/data_warehouse/raw/master/legislAr/data_raw/asuntos-diputados.csv", 
-                        col_names = FALSE) 
+                        col_names = TRUE) 
 
 dim_test <- dim(test)[1]
 
 
 # Fail safely when online source is not available
 
-  if(dim_test > dim_data){
-    
-    message("No new data @ 'La Decada Votada'" )
-    
-    df <- data.frame(msje =  glue::glue("No new data @ 'La Decada Votada' on {format(Sys.time(), 
+if(dim_test <= dim_data){
+  
+  message("No new data @ 'La Decada Votada'" )
+  
+  df <- data.frame(msje =  glue::glue("No new data @ 'La Decada Votada' on {format(Sys.time(), 
     '%a %b %d %X %Y')}"))
-
-    write.csv(df, file = glue::glue("legislAr/data_check/check_{Sys.Date()}.csv"))
-
-    
-    } else {
-
-      
-      data %>% 
-        purrr::map2(.x = data$data, 
-                    .y = data$file, 
-                    .f = ~write_csv(.x, 
-                                    file = glue::glue("legislAr/data_raw/{.y}")))
-      
-    
-    }
+  
+  write.csv(df, file = glue::glue("legislAr/data_check/check_{Sys.Date()}.csv"))
+  
+  
+} else {
+  
+  
+  data %>% 
+    purrr::map2(.x = data$data, 
+                .y = data$file, 
+                .f = ~write_csv(.x, 
+                                file = glue::glue("legislAr/data_raw/{.y}")))
+  
+  
+}
 
 
 
