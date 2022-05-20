@@ -76,7 +76,7 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
         dplyr::slice(2) %>% 
         dplyr::ungroup() %>% 
         dplyr::mutate(mes = lubridate::month(fecha), ano = lubridate::year(fecha)) %>% 
-        dplyr::select(-fecha) 
+        dplyr::select(-fecha)
       
       
       # Write icg microdata .dta file
