@@ -63,7 +63,7 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
   if(is.null(default)){
     df <- base::message("Fail to download data. Source is not available // La fuente de datos no esta disponible")
   
-    save(x, file = paste0("opinAr/data_raw/download_fail", make.names(Sys.time()), ".txt")) # Create infomative error file
+    save(df, file = paste0("opinAr/data_raw/download_fail", make.names(Sys.time()), ".txt")) # Create infomative error file
     
     } else {
 
