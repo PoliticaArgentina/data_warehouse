@@ -68,7 +68,7 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
     df <- data.frame(msje =  glue::glue("Fail to download data. Source is not available - {format(Sys.time(), 
     '%a %b %d %X %Y')}"))
     
-    write.csv(df, file = glue::glue("legislAr/data_check/check_{Sys.Date()}.csv"))
+    write.csv(df, file = glue::glue("opinar/data_check/check_{Sys.time()}.csv"))
     
     
     } else {
