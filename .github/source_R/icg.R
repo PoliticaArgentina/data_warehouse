@@ -61,9 +61,15 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
 # Fail safely when online source is not available
 
   if(is.null(default)){
-    df <- base::message("Fail to download data. Source is not available // La fuente de datos no esta disponible")
-  
-    save(df, file = paste0("opinAr/data_raw/download_fail", make.names(Sys.time()), ".txt")) # Create infomative error file
+    
+    
+    message("Fail to download data. Source is not available // La fuente de datos no esta disponible" )
+    
+    df <- data.frame(msje =  glue::glue("Fail to download data. Source is not available - {format(Sys.time(), 
+    '%a %b %d %X %Y')}"))
+    
+    write.csv(df, file = glue::glue("legislAr/data_check/check_{Sys.Date()}.csv"))
+    
     
     } else {
 
