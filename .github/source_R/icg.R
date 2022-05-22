@@ -63,8 +63,6 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
   if(is.null(default)){
     
     
-    message("Fail to download data. Source is not available // La fuente de datos no esta disponible" )
-    
     df <- data.frame(msje =  glue::glue("Fail to download data. Source is not available - {format(Sys.time(), 
     '%a %b %d %X %Y')}"))
     
