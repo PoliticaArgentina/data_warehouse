@@ -60,16 +60,16 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
 
 # Fail safely when online source is not available
 
-  if(is.null(default)){
-    
-    
-    df <- data.frame(msje =  glue::glue("Fail to download data. Source is not available - {format(Sys.time(), 
-    '%a %b %d %X %Y')}"))
-    
-    
-    write.csv(df, file = glue::glue("opinAr/data_check/check_{Sys.Date()}.csv"))
-    
-    } else {
+#  if(is.null(default)){
+#    
+#    
+#    df <- data.frame(msje =  glue::glue("Fail to download data. Source is not available - {format(Sys.time(), 
+#    '%a %b %d %X %Y')}"))
+#    
+#    
+#    write.csv(df, file = glue::glue("opinAr/data_check/check_{Sys.Date()}.csv"))
+#    
+#    } else {
 
       
       waves <- df %>% 
@@ -91,7 +91,7 @@ df <- base::suppressWarnings(base::try(default <-  haven::read_dta(icg_file) %>%
     
     readr::write_csv(waves, "opinAr/data_raw/icg_waves.csv") 
     
-    }
+ #   }
 
 
 
