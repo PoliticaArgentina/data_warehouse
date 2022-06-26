@@ -24,9 +24,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Install libcurl
-        run: |
-          sudo apt-get install libcurl4-openssl-dev --fix-broken
+      - name: Install cURL Headers
+        run: sudo apt-get install libcurl4-openssl-dev
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
