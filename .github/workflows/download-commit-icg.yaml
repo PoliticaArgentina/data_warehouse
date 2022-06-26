@@ -23,7 +23,7 @@ jobs:
 #https://askubuntu.com/questions/1096238/stuck-trying-to-install-libcurl4
     steps:
       - uses: actions/checkout@v2
-      - name: Install libcurl
+
       - name: Install cURL Headers
         run: sudo apt-get install libcurl4-openssl-dev
 
