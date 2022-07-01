@@ -1,4 +1,5 @@
-on:
+on: [push, schedule]
+  push:
   schedule:
   # https://crontab.cronhub.io/
     - cron: "1 1 1 * *" #  at 10:00 AM, on day 15 and 25 of the month
@@ -22,9 +23,8 @@ jobs:
 #https://askubuntu.com/questions/1096238/stuck-trying-to-install-libcurl4
     steps:
       - uses: actions/checkout@v2
-      - name: Install libcurl
-        run: |
-          sudo apt-get install libcurl4-openssl-dev --fix-broken
+      - name: Install cURL Headers
+        run: sudo apt-get install libcurl4-openssl-dev
 
       - uses: r-lib/actions/setup-r@master
         with:
