@@ -6,7 +6,7 @@ on: [push, schedule]
   
   workflow_dispatch:
 
-name: check_calendar_flow
+name: cron_decada_votada
 
 jobs:
   run-r-script:
@@ -19,15 +19,13 @@ jobs:
       
       - name: Generate Decada Votada data
         run: |
-          source(".github/source_R/decada_votada.R")
-        shell: Rscript {0} 
+          Rscript ".github/source_R/decada_votada.R"
         
       - name: Commit files
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git pull
-          git add --all
-          git commit -am "checked 'Decada Votada' 4 new data  on `date +'%Y-%m-%d %H:%M:%S'`"
-          git push 
+          git add -A
+          git commit -m "checked 'Decada Votada' 4 new data  on `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
+          git push origin || echo "No changes to commit" 
       
