@@ -2,7 +2,7 @@ on: [push, schedule]
   push:
   schedule:
   # https://crontab.cronhub.io/
-    - cron: "1 1 1 * *" #  at 10:00 AM, on day 15 and 25 of the month
+    - cron: "1 1 1 * *" #  At 01:01 AM, on day 1 of the month
   
 jobs:
   generate-data:
