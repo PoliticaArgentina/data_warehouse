@@ -4,7 +4,7 @@
 
 
 install.packages(c("magrittr", "janitor", "rvest", "haven",
-                   "dplyr", "readr", "glue", "purrr"))
+                   "dplyr", "readr", "glue", "purrr", "sessioninfo"))
 
 
 
