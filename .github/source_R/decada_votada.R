@@ -2,6 +2,12 @@
 #### github actions https://www.decadavotada.com.ar/doc.html
 
 # Needed libraries
+
+
+install.packages(c("magrittr", "janitor",
+                   "dplyr", "readr", "glue", "purrr"))
+
+
 library(magrittr) # A Forward-Pipe Operator for R, CRAN v2.0.1
 library(janitor) # Simple Tools for Examining and Cleaning Dirty Data, CRAN v2.1.0
 library(dplyr) # A Grammar of Data Manipulation, CRAN v1.0.5
