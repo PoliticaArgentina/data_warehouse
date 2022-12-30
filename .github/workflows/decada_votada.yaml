@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    # https://crontab.cronhub.io/
+    - cron: "0 10 1 * *" #  At 10:00 AM, on day 1 of the month
+
+name: R-CMD-check
+
+jobs:
+  R-CMD-check:
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest, r: 'release'}
+          
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      RSPM: ${{ matrix.config.rspm }}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: ${{ matrix.config.r }}
+
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Generate Decada Votada data
+        run: |
+          Rscript ".github/source_R/decada_votada.R"
+        
+      - name: Commit files
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add -A
+          git commit -m "checked 'Decada Votada' 4 new data  on `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
+          git push origin || echo "No changes to commit" 
+      
