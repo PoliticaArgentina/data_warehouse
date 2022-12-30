@@ -23,16 +23,28 @@ main = "https://www.utdt.edu"
 url = "https://www.utdt.edu/ver_contenido.php?id_contenido=17876&id_item_menu=28756"
 
 
-# GET .zip FILE LINK 
+# CONDITIONAL LINK BUILIDING
+# .dta or .zip published data
 
-link <- rvest::read_html(url) %>% 
+source <- rvest::read_html(url) %>%
   rvest::html_nodes("a.noicon") %>% # Look for all URLs
   rvest::html_attr('href') %>%
-  as_tibble() %>% 
-  dplyr::filter(stringr::str_detect(value,"\\.zip")) %>% # ICG dta.zip file
-  dplyr::transmute(value = as.character(glue::glue("{main}{value}"))) %>%  # Create file link 
-  dplyr::pull() 
+  dplyr::as_tibble()
 
+
+# Check for .zip file
+
+check_zip <- source %>%
+  dplyr::filter(stringr::str_detect(value,"\\.zip"))
+
+
+icg_file <- if(dim(check_zip)[1] == 1) {
+  # GET .dta FILE LINK
+  
+  link_zip <- source %>%
+    dplyr::filter(stringr::str_detect(value,"\\.zip")) %>% # ICG dta.zip file
+    dplyr::transmute(value = as.character(glue::glue("{main}{value}"))) %>%  # Create file link
+    dplyr::pull()
 
 # Download file from URL 
 
@@ -52,8 +64,19 @@ download.file(url = link,  temp)
 unzip(zipfile = temp, exdir = temp2)
 
 # Select .dta file path
-icg_file <-list.files(temp2, pattern = ".dta$", full.names=TRUE)
+list.files(temp2, pattern = ".dta$", full.names=TRUE)
 
+
+}else{
+
+source %>%
+  dplyr::filter(stringr::str_detect(value,".dta")) %>% # ICG dta.zip file
+  dplyr::transmute(value = as.character(glue::glue("{main}{value}"))) %>%  # Create file link
+  dplyr::pull()
+
+
+
+}
 
 # Load data from temfile path workflow
 
