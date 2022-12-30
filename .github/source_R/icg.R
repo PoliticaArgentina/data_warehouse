@@ -1,6 +1,13 @@
 #### AUTOMATE ICG DOWNLOAD
 #### github actions
 
+
+
+install.packages(c("magrittr", "janitor", "rvest", "haven",
+                   "dplyr", "readr", "glue", "purrr"))
+
+
+
 # Needed libraries
 library(magrittr) # A Forward-Pipe Operator for R, CRAN v2.0.1
 library(rvest) # Easily Harvest (Scrape) Web Pages, CRAN v1.0.0
