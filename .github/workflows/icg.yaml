@@ -5,12 +5,12 @@ on:
       - master
   schedule:
     # https://crontab.cronhub.io/
-    - cron: "0 10 1 * *" #  At 10:00 AM, on day 1 of the month
+    - cron: "0 10 15,25 * *" #  At 10:00 AM, on day 1 of the month
 
-name: Decada Votada Download
+name: ICG Download
 
 jobs:
-  R-CMD-check:
+  generate-data:
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
@@ -35,15 +35,22 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v1
 
-      - name: Generate Decada Votada data
+      - name: Generate ICG data
         run: |
-          Rscript ".github/source_R/decada_votada.R"
+          source(".github/source_R/icg.R")
+        shell: Rscript {0} 
         
       - name: Commit files
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add -A
-          git commit -m "checked 'Decada Votada' 4 new data  on `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
-          git push origin || echo "No changes to commit" 
-      
+          git pull
+          git add --all
+          git commit -am "add ICG data  on `date +'%Y-%m-%d %H:%M:%S'`"
+          git push 
+      - name: Session info
+        run: |
+          options(width = 100)
+          pkgs <- installed.packages()[, "Package"]
+          sessioninfo::session_info(pkgs, include_base = TRUE)
+        shell: Rscript {0}
