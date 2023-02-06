@@ -141,7 +141,7 @@ unzip(zipfile = temp, exdir = temp2)
 geojson_entidades<-list.files(temp2, pattern = ".json",full.names=TRUE)
 
 
-read_sf(your_geojson_file)%>% 
+read_sf(geojson_entidades)%>% 
   rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
   st_write("geoAr/data/aglos_simplified.geojson")
 
