@@ -122,3 +122,29 @@ read_sf(your_SHP_file)%>%
 
 
 
+
+### ARGENTINA EPH AGLO####
+
+
+url_entidades <-  "https://www.indec.gob.ar/ftp/cuadros/territorio/entidades_eph_json.zip"
+
+temp <- tempfile()
+
+temp2 <- tempfile()
+
+download.file(url_entidades,temp)
+#unzip the contents in 'temp' and save unzipped content in 'temp2'
+unzip(zipfile = temp, exdir = temp2)
+
+
+
+geojson_entidades<-list.files(temp2, pattern = ".json",full.names=TRUE)
+
+
+read_sf(your_geojson_file)%>% 
+  rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
+  st_write("geoAr/data/aglos_simplified.geojson")
+
+
+
+
