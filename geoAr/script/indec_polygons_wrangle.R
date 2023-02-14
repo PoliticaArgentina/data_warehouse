@@ -125,6 +125,8 @@ read_sf(your_SHP_file)%>%
 
 ### ARGENTINA EPH AGLO####
 
+#### ENTIDADES
+
 
 url_entidades <-  "https://www.indec.gob.ar/ftp/cuadros/territorio/entidades_eph_json.zip"
 
@@ -144,6 +146,59 @@ geojson_entidades<-list.files(temp2, pattern = ".json",full.names=TRUE)
 read_sf(geojson_entidades)%>% 
   rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
   st_write("geoAr/data/aglos_simplified.geojson")
+
+
+
+#### ENVOLVENTES
+
+
+url_envolventes <-  "https://sitioanterior.indec.gob.ar/ftp/cuadros/territorio/aglomerados_eph_json.zip"
+
+temp <- tempfile()
+
+temp2 <- tempfile()
+
+download.file(url_envolventes,temp)
+#unzip the contents in 'temp' and save unzipped content in 'temp2'
+unzip(zipfile = temp, exdir = temp2)
+
+
+
+geojson_envolventes<-list.files(temp2, pattern = ".json",full.names=TRUE)
+
+
+read_sf(geojson_envolventes)%>% 
+  st_write("geoAr/data_raw/aglos_envolventes.geojson")
+
+
+read_sf(geojson_envolventes)%>% 
+  rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
+  st_write("geoAr/data/aglos_envolventes_simplified.geojson")
+
+
+
+#### RADIOS
+url_radios_eph <-  "https://sitioanterior.indec.gob.ar/ftp/cuadros/territorio/radios_eph_json.zip"
+
+temp <- tempfile()
+
+temp2 <- tempfile()
+
+download.file(url_radios_eph,temp)
+#unzip the contents in 'temp' and save unzipped content in 'temp2'
+unzip(zipfile = temp, exdir = temp2)
+
+
+
+geojson_radios_eph<-list.files(temp2, pattern = ".json",full.names=TRUE)
+
+
+read_sf(geojson_radios_eph)%>% 
+  st_write("geoAr/data_raw/radios_eph.geojson")
+
+read_sf(geojson_radios_eph)%>% 
+  rmapshaper::ms_simplify(keep_shapes = TRUE) %>% 
+  st_write("geoAr/data/radios_eph_simplified.geojson")
 
 
 
