@@ -8,13 +8,12 @@ El paquete incluye datos GIS con polígonos para ditintos niveles de unidades ad
 
 -   Las geometrías de niveles de provincias, departamentos y radios censales fueron descargadas desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/codgeo.asp). Los mismos corresponden a la cartografía utilizada en el marco del *Censo Nacional de Población, Hogares y Viviendas 2010*.
 
--   Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en `{geofaceteAR}`, cuya idea presentamos en la primera edición de LatinR ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)).
 
--   Las geometrías correspondientes a la Encuesta Permanente de Hogares (a niveles de entidades, radio censar y envolventes)fueron descargadas desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/nivel4_default.asp?id_tema_1=1&id_tema_2=39&id_tema_3=120). 
+-   Las geometrías correspondientes a la `Encuesta Permanente de Hogares (EPH)` (a niveles de entidades, radio censar y envolventes) fueron descargadas desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/nivel4_default.asp?id_tema_1=1&id_tema_2=39&id_tema_3=120). 
 
--   Las geometrías correspondientes a la Encuesta Permanente de Hogares (a niveles de entidades, radio censar y envolventes)fueron descargadas desde [el sitio del Instituto Nacional de Estadísiticas y Censos](https://sitioanterior.indec.gob.ar/nivel4_default.asp?id_tema_1=1&id_tema_2=39&id_tema_3=120). 
+-   Las geometrías reconstruidas de los CENSOS históricos fueron obtenidas  del proyecto `Base cartográfica de departamentos para los censos nacionales de la República Argentina desde 1869 a 2010` de Gonzalo Rodriguez y Pablo De Grande el 14 febrero de 2023. La documentacion se encuetra disponible en https://ri.conicet.gov.ar/handle/11336/149867
 
--   Las geometrías reconstruidas de los CENSOS históricos fueron obtenidas  del proyecto 'Base cartográfica de departamentos para los censos nacionales de la República Argentina desde 1869 a 2010' de Gonzalo Rodriguez y Pablo De Grande el 14 febrero de 2023. La documentacion se encuetra disponible en https://ri.conicet.gov.ar/handle/11336/149867
+-   Las grillas para visualizar los paneles de `ggplot2` como si fueran mapas de Argentina fueron diseñados como colaboración para el paquete `{geofacet}`. Como desarrollo propio esto se plasmó en `{geofaceteAR}`, cuya idea presentamos en la primera edición de `LatinR` ([Buenos Aires, 2018](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio)).
 
 
     -   *LatinR: Geofaceting Argentina*
