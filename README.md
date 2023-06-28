@@ -56,7 +56,7 @@ Datos compartidos por Andy Tow en su proyecto [*La Década Votada*](https://andy
 
 ------------------------------------------------------------------------
 
-## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="100" align="left"/></a> [:package: {electorAr}](https://github.com/PoliticaArgentina/opinAr) - Datos electorales de Argentina:
+## <a><img src="https://github.com/politicaargentina/data_warehouse/blob/master/hex/electorAr.png?raw=true" width="100" align="left"/></a> [:package: {electorAr}](https://github.com/PoliticaArgentina/electorAr) - Datos electorales de Argentina:
 
 -   [**Escrutinios provisorios**](https://github.com/PoliticaArgentina/data_warehouse/blob/master/electorAr/data_raw/escrutinios_provisorios.md) de elecciones para cargos nacionales (presidente, diputados y senadores) desagregados a nivel de mesa electoral para elecciones entre 2003 y 2019. Los archivos originales sin procesar fueron obtenidos de la sección *Descargas* del [blog de Andy Tow](https://www.andytow.com/atlas/totalpais/downloads.html).
 
