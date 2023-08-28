@@ -1,5 +1,6 @@
 #### AUTOMATE DECADA VOTADA DOWNLOAD
 #### github actions https://www.decadavotada.com.ar/doc.html
+### Alternative URL Source Data https://www.decadavotada.andytow.com/doc.html
 
 # Needed libraries
 
@@ -19,7 +20,10 @@ library(purrr) # Functional Programming Tools, CRAN v0.3.4
 
 
 # GET .zip FILE LINK 
-link = "https://www.decadavotada.com.ar/DecadaVotadaCSV.zip"
+# link = "https://www.decadavotada.com.ar/DecadaVotadaCSV.zip"
+
+# GET .zip FILE LINK - ALTERNATIVE SOURCE
+link = "https://www.decadavotada.andytow.com/DecadaVotadaCSV.zip"
 
 # Download file from URL 
 
