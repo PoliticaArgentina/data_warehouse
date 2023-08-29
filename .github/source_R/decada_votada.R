@@ -35,6 +35,11 @@ temp2 <- tempfile()
 
 # Download .zip
 
+
+# DO NOT VALIDATE SSL CERTIFICATE
+options(download.file.method="curl", download.file.extra="-k -L")
+
+
 download.file(url = link,  temp)
 
 
