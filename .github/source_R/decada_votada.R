@@ -6,7 +6,7 @@
 
 
 install.packages(c("magrittr", "janitor",
-                   "dplyr", "readr", "glue", "purrr"))
+                   "dplyr", "readr", "glue", "purrr", "curl"))
 
 
 library(magrittr) # A Forward-Pipe Operator for R, CRAN v2.0.1
