@@ -60,7 +60,7 @@ files <- tidyr::separate(data = tidyr::as_tibble(csv_files),
 data <- files %>% 
   dplyr::mutate(data = purrr::map2(.x = url,
                                    .y =  value,
-                                   ~ readr::read_csv(.y, col_names = FALSE)))
+                                   ~ readr::read_csv2(.y, col_names = FALSE)))
 
 
 #### CHEQUEO SI HAY DATOS MAS NUEVOS####
